@@ -1,0 +1,12 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/services">Назад</a>
+<h1>Редактирование данных об услуге</h1>
+<form method="post" class="form-contact">
+<p><label>Название услуги: </label> <input type="text" name="name" value="{{service.name}}"/>
+<p><label>Описание услуги: </label><textarea name="description">{{service.description}}</textarea>
+<p><label>Стоимость услуги: </label> <input type="text" name="price" value="{{service.price}}"/>
+    <p><input type="submit" class="btn-create" value="Редактировать" />
+</form>
+{% endblock %}

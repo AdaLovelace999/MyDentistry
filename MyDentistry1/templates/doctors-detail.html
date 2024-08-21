@@ -1,0 +1,20 @@
+<title>Врач {{doctor.id}}</title>
+{% extends 'layout.html' %}
+{% block content %}
+<a href="/doctors">Назад</a>
+<div>
+    <h5>Имя: {{doctor.name}}</h5>
+    {% for s in spec %}
+
+    {% if s.id == doctor.speciality_id %}
+    <p>Специальность: {{s.name}}</p>
+    {% endif %}
+
+    {% endfor %}
+    <p>Номер кабинета: {{doctor.cabinet}}</p>
+    <p>Телефон: {{doctor.phone}}</p>
+
+</div>
+<a href="/doctors/{{doctor.id}}/delete">Удалить</a>
+<a href="/doctors/{{doctor.id}}/update">Редактировать</a>
+{% endblock %}

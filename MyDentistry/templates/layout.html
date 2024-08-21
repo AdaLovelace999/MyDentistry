@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+	<title>{{title}}</title>
+</head>
+<body>
+<ul class="mainmenu">
+<li><a href="{{ url_for('index') }}">Главная</a></li>
+<li><a href="{{ url_for('show_doctors') }}">Врачи</a></li>
+<li><a href="{{ url_for('show_patients') }}">Пациенты</a></li>
+<li><a href="{{ url_for('show_specialties') }}">Специальности</a></li>
+<li><a href="{{ url_for('show_services') }}">Услуги</a></li>
+<li><a href="{{ url_for('show_appointments') }}">Прием</a></li>
+</ul>
+<div class="content">
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

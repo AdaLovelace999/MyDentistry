@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Специальности врачей клиники</h1>
+
+{% for sp in specialties %}
+<div>
+    <p>ID специальности: {{sp.id}}</p>
+    <p>Название специальности: {{sp.name}}</p>
+    <a href="/specialties/{{sp.id}}">Подробная информация</a>
+    <hr>
+</div>
+{% endfor %}
+
+<a class="btn-create" href="/create-speciality">Добавить специальность</a>
+{% endblock %}

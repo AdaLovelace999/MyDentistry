@@ -1,0 +1,19 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/doctors">Назад</a>
+<h1>Редактирование данных о враче</h1>
+<form method="post" class="form-contact">
+<p><label>Имя: </label> <input type="text" name="name" value="{{doctor.name}}"/>
+
+<p><label>Специальность: </label> <input name="speciality_id" list="speciality_id"/>
+<datalist id="speciality_id">
+    {% for s in spec %}
+    <option value="{{s.id}}">{{s.name}}</option>
+    {% endfor %}
+</datalist>
+<p><label>Номер кабинета: </label> <input type="text" name="cabinet" value="{{doctor.cabinet}}"/>
+<p><label>Телефон: </label> <input type="text" name="phone" value="{{doctor.phone}}"/>
+    <p><input type="submit" class="btn-create" value="Редактировать" />
+</form>
+{% endblock %}

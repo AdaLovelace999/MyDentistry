@@ -1,0 +1,43 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/appointments">Назад</a>
+<h1>Редактирование записи</h1>
+
+<form method="post" class="form-contact">
+
+<p><label>Имя врача: </label>
+<input name="doctor_id" list="doctor_id"> <datalist id="doctor_id">
+    {% for d in doc %}
+    <option value="{{d.id}}" >{{d.name}}</option>
+    {% endfor %}
+</datalist>
+
+
+<p><label>Имя пациента: </label>
+<input name="patient_id" list="patient_id"> <datalist id="patient_id">
+    {% for p in pat %}
+    <option value="{{p.card_number}}">{{p.name}}</option>
+    {% endfor %}
+</datalist>
+
+<p><label>Дата приема: </label>
+<input type="date" name="date" value="{{appointment.date}}"/>
+
+<p><label>Время приема: </label>
+<input type="time" name="time" value="{{appointment.time}}"/>
+
+
+<p><label>Услуга: </label> <input name="service_id" list="service_id"/>
+<datalist id="service_id">
+    {% for s in serv %}
+    <option value="{{s.id}}">{{s.name}}</option>
+    {% endfor %}
+</datalist>
+
+<p><label>Количество: </label>
+<input type="text" name="quantity" value="{{appointment.quantity}}"/>
+    <p><input type="submit" class="btn-create" value="Редактировать" />
+</form>
+
+{% endblock %}

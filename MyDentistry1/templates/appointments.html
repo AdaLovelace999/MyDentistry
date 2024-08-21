@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+<h1>Записи на прием</h1>
+
+{% for ap in appointments %}
+<div>
+    <h5>Дата приема: {{ap.date}}</h5>
+    <p>Время приема: {{ap.time}}</p>
+{% for p in pat %}
+    {% if p.card_number == ap.patient_id %}
+    <p>Пациент: {{p.name}}</p>
+    {% endif %}
+{% endfor %}
+    <a href="/appointments/{{ap.id}}">Подробная информация</a>
+    <hr>
+</div>
+{% endfor %}
+
+<a class="btn-create" href="/create-appointment">Добавить запись</a>
+{%endblock%}

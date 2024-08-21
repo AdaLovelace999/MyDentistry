@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+<h1>Врачи</h1>
+
+{% for d in doctors %}
+<div>
+    <h5>{{d.name}}</h5>
+    <a href="/doctors/{{d.id}}">Подробная информация</a>
+    <hr>
+</div>
+{% endfor %}
+
+<a class="btn-create" href="/create-doctor">Добавить врача</a>
+{%endblock%}

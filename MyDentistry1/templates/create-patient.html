@@ -1,0 +1,20 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/patients">Назад</a>
+<h1>Добавление пациента</h1>
+<form method="post" class="form-contact">
+
+<p><label>Имя: </label> <input type="text" name="name"/>
+<p><label>Дата рождения: </label> <input type="date" name="birthday"/>
+<p><label>Пол: </label></p>
+    <p><input type="radio" name="sex" value="муж" checked />Мужской
+    <p><input type="radio" name="sex" value="жен" />Женский
+    <p><input type="radio" name="sex" value="другой" />Другой
+<p><label>Адрес: </label> <input type="text" name="address"/>
+<p><label>Email: </label> <input type="text" name="email"/>
+<p><label>Телефон: </label> <input type="text" name="phone"/>
+
+<p><input type="submit" class="btn-create" value="Добавить" />
+</form>
+{% endblock %}

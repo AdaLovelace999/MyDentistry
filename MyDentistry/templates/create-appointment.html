@@ -1,0 +1,36 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/appointments">Назад</a>
+<h1>Добавление записи</h1>
+
+<form method="post" class="form-contact">
+
+<p><label>Имя врача: </label>
+<select name="doctor_id">
+    {% for d in doc %}
+    <option value="{{d.id}}">{{d.name}}</option>
+    {% endfor %}
+</select>
+
+<p><label>Имя пациента: </label>
+<select name="patient_id">
+    {% for p in pat %}
+    <option value="{{p.card_number}}">{{p.name}}</option>
+    {% endfor %}
+</select>
+
+<p><label>Дата: </label><input type="date" name="date"/>
+<p><label>Время: </label><input type="time" name="time"/>
+
+<p><label>Услуга: </label>
+    <select name="service_id">
+    {% for s in serv %}
+    <option value="{{s.id}}">{{s.name}}</option>
+    {% endfor %}
+    </select>
+<p><label>Количество: </label> <input type="text" name="quantity"/>
+    <p><input type="submit" class="btn-create" value="Добавить" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<title>Прием {{ap.id}}</title>
+{% extends 'layout.html' %}
+{% block content %}
+<a href="/appointments">Назад</a>
+<div>
+
+{% for p in pat %}
+    {% if p.card_number == ap.patient_id %}
+    <p>Пациент: {{p.name}}</p>
+    {% endif %}
+{% endfor %}
+
+{% for d in doc %}
+    {% if d.id == ap.doctor_id %}
+    <p>Врач: {{d.name}}</p>
+    {% endif %}
+{% endfor %}
+
+<p>Дата приема: {{ap.date}}</p>
+<p>Время приема: {{ap.time}}</p>
+
+{% for s in serv %}
+    {% if s.id == ap.service_id %}
+    <p>Услуга: {{s.name}}</p>
+    {% endif %}
+{% endfor %}
+
+<p>Количество: {{ap.quantity}}</p>
+</div>
+<a href="/appointments/{{ap.id}}/delete">Удалить</a>
+<a href="/appointments/{{ap.id}}/update">Редактировать</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/specialties">Назад</a>
+<h1>Редактирование данных о специальности</h1>
+<form method="post" class="form-contact">
+<p><label>Название специальности: </label> <input type="text" name="name" value="{{speciality.name}}"/>
+    <p><input type="submit" class="btn-create" value="Редактировать" />
+</form>
+{% endblock %}

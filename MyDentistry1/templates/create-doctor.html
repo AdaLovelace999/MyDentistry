@@ -1,0 +1,23 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/doctors">Назад</a>
+<h1>Добавление врача</h1>
+
+<form method="post" class="form-contact">
+
+<p><label>Имя: </label> <input type="text" name="name"/>
+<p><label>Специальность: </label>
+
+<select name="speciality_id">
+    {% for s in spec %}
+    <option value="{{s.id}}">{{s.name}}</option>
+    {% endfor %}
+</select>
+
+<p><label>Номер кабинета: </label> <input type="text" name="cabinet"/>
+<p><label>Телефон: </label> <input type="text" name="phone"/>
+
+<p><input type="submit" class="btn-create" value="Добавить" />
+</form>
+{% endblock %}

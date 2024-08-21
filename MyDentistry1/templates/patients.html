@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+<h1>Пациенты</h1>
+
+{% for p in patients %}
+<div>
+    <h4>Имя пациента: {{p.name}}</h4>
+    <p>Номер карточки: {{p.card_number}}</p>
+    <a href="/patients/{{p.card_number}}">Подробная информация</a>
+    <hr>
+</div>
+{% endfor %}
+
+<a class="btn-create" href="/create-patient">Добавить пациента</a>
+{%endblock%}

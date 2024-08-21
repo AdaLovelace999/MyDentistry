@@ -1,0 +1,18 @@
+<title>Пациент {{patient.card_number}}</title>
+{% extends 'layout.html' %}
+
+{% block content %}
+<a href="/patients">Назад</a>
+<div>
+    <h4>Имя: {{patient.name}}</h4>
+    <p>Номер карточки: {{patient.card_number}}</p>
+    <p>Дата рождения: {{patient.birthday}}</p>
+    <p>Пол: {{patient.sex}}</p>
+    <p>Адрес: {{patient.address}}</p>
+    <p>Email: {{patient.email}}</p>
+    <p>Телефон: {{patient.phone}}</p>
+
+</div>
+<a href="/patients/{{patient.card_number}}/delete">Удалить</a>
+<a href="/patients/{{patient.card_number}}/update">Редактировать</a>
+{% endblock %}

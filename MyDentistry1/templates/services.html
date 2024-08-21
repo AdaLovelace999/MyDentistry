@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Список услуг клиники</h1>
+
+{% for s in services %}
+<div>
+    <h5>{{s.name}}</h5>
+    <p>ID услуги: {{s.id}}</p>
+    <a href="/services/{{s.id}}">Подробная информация</a>
+    <hr>
+</div>
+{% endfor %}
+
+<a class="btn-create" href="/create-service">Добавить услугу</a>
+{% endblock %}

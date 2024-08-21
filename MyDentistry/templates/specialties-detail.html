@@ -1,0 +1,11 @@
+<title>Специальность {{speciality.id}}</title>
+{% extends 'layout.html' %}
+
+{% block content %}
+<a href="/specialties">Назад</a>
+<div>
+    <p>Название специальности: {{speciality.name}}</p>
+</div>
+<a href="/specialties/{{speciality.id}}/delete">Удалить</a>
+<a href="/specialties/{{speciality.id}}/update">Редактировать</a>
+{% endblock %}

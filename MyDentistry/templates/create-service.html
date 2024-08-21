@@ -1,0 +1,12 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/services">Назад</a>
+<h1>Добавление услуги</h1>
+<form method="post" class="form-contact">
+<p><label>Название услуги: </label> <input type="text" name="name"/>
+<p><label>Описание услуги: </label> <textarea name="description"> </textarea>
+<p><label>Стоимость услуги: </label> <input type="text" name="price"/>
+<p><input type="submit" class="btn-create" value="Добавить" />
+</form>
+{% endblock %}

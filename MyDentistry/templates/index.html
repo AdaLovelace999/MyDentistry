@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+<p>Сегодня: {{now.date()}}</p>
+<h1>Ближайшие записи</h1>
+
+{% for ap in appointments %}
+<div>
+    <h5>Дата приема: {{ap.date}}</h5>
+    <h5>Время приема: {{ap.time}}</h5>
+{% for p in pat %}
+    {% if p.card_number == ap.patient_id %}
+    <p>Пациент: {{p.name}}</p>
+    {% endif %}
+{% endfor %}
+    <hr>
+</div>
+{% endfor %}
+<a class="btn-create" href="/create-appointment">Записаться</a>
+{%endblock%}

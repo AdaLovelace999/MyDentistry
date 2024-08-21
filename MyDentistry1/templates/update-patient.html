@@ -1,0 +1,18 @@
+<title>{{title}}</title>
+
+{% block content %}
+<a href="/patients">Назад</a>
+<h1>Редактирование данных о пациенте</h1>
+<form method="post" class="form-contact">
+<p><label>Имя: </label> <input type="text" name="name" value="{{patient.name}}"/>
+<p><label>Дата рождения: </label> <input type="date" name="birthday" value="{{patient.birthday}}"/>
+<p><label>Пол: </label>{{patient.sex}}</p>
+    <p><input type="radio" name="sex" value="муж"/>Мужской
+    <p><input type="radio" name="sex" value="жен" />Женский
+    <p><input type="radio" name="sex" value="другой" />Другой
+<p><label>Адрес: </label> <input type="text" name="address" value="{{patient.address}}"/>
+<p><label>Email: </label> <input type="text" name="email" value="{{patient.email}}"/>
+<p><label>Телефон: </label> <input type="text" name="phone" value="{{patient.phone}}"/>
+    <p><input type="submit" class="btn-create" value="Редактировать" />
+</form>
+{% endblock %}
